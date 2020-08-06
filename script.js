@@ -4,13 +4,16 @@ const googleDataBase = [
     'flowers.com',
     'animals.com',
     'catpictures.com',
-    'myfavoritecats.com'
+    'myfavoritecats.com',
+    'catsTwo.com'
 ];
 
-const googleSearch = searchInputs => {
-    const matches = googleDataBase.filter(website => {
+const googleSearch = (searchInputs, db) => {
+    const matches = db.filter(website => {
         return website.includes(searchInputs)
     })
 
     return matches.length > 3 ? matches.slice(0, 3) : matches
 }
+
+module.exports = googleSearch;
