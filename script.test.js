@@ -14,11 +14,14 @@ it('returns an empty array when no matches are found', () => {
     .toEqual([]);
 });
 
+it('returns empty array with null || undefined inputs', () => {
+    expect(googleSearch(undefined, dbMock))
+    .toEqual([]);
+    expect(googleSearch(null, dbMock))
+    .toEqual([]);
+});
+
 it('returns only the first three matches', () => {
-    expect(googleSearch('dog', dbMock))
-    .toEqual([
-        'dog.com',
-        'dogsTwo.com',
-        'dogPics.com'
-    ]);
+    expect(googleSearch('dog', dbMock).length)
+    .toBeLessThanOrEqual(3);
 });
