@@ -23,5 +23,5 @@ it('returns empty array with null || undefined inputs', () => {
 
 it('returns only the first three matches', () => {
     expect(googleSearch('dog', dbMock).length)
-    .toBeLessThanOrEqual(3);
+    .toEqual(3);
 });
